@@ -1,4 +1,3 @@
-````markdown
 # Enterprise Knowledge Assistant
 
 > A production-oriented AI Data Engineering project that evolves from basic document processing into a Retrieval-Augmented Generation (RAG) application.
@@ -230,4 +229,4 @@ By the end of this project, the application will support:
 ## 📄 License
 
 This project is intended for educational purposes, portfolio development, and demonstration of AI Data Engineering concepts.
-````
+
