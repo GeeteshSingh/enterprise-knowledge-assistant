@@ -1,0 +1,11 @@
+OpenAI develops AI models.
+
+Kafka is used for event streaming.
+
+Spark processes large-scale data.
+
+Vector databases store embeddings.
+
+RAG combines retrieval with language models.
+
+Made by Geetesh
