@@ -1,111 +1,59 @@
-```markdown
+````markdown
 # Enterprise Knowledge Assistant
 
-> A production-oriented AI Data Engineering project that evolves from basic document processing into a Retrieval-Augmented Generation (RAG) application using modern AI technologies.
+> A production-oriented AI Data Engineering project that evolves from basic document processing into a Retrieval-Augmented Generation (RAG) application.
 
 ---
 
-## Project Overview
+## 📖 Overview
 
-Enterprise organizations store vast amounts of information in documents such as PDFs, Word files, emails, reports, SOPs, and knowledge bases. Finding relevant information quickly is often difficult.
+Enterprise organizations store large amounts of information across documents, reports, SOPs, emails, and knowledge bases. Retrieving the right information quickly is often challenging.
 
-This project demonstrates how to build an AI-powered knowledge assistant capable of ingesting enterprise documents, indexing their contents, and answering user questions using Large Language Models (LLMs).
+This project demonstrates how to build an **AI-powered Enterprise Knowledge Assistant** capable of processing enterprise documents and answering user questions using modern AI technologies.
 
-The project is being developed incrementally, following production engineering practices rather than tutorial-style coding.
+Unlike tutorial-based projects, this repository follows **production engineering practices**, with the application built incrementally from the ground up.
 
 ---
 
-## Objectives
+## 🎯 Goals
 
-- Build production-quality Python code
 - Learn AI Data Engineering through hands-on development
+- Build production-quality Python applications
 - Implement Retrieval-Augmented Generation (RAG)
 - Work with embeddings and vector databases
 - Build REST APIs using FastAPI
-- Containerize applications using Docker
-- Deploy the application to the cloud
+- Containerize applications with Docker
+- Deploy applications to the cloud
 - Follow software engineering best practices
 
 ---
 
-## Technology Stack
+## 🛠 Tech Stack
 
-### Programming Language
+### Current
 
 - Python 3.x
+- Git
+- GitHub
 
-### Planned Technologies
+### Planned
 
 - FastAPI
 - Docker
-- Git & GitHub
-- OpenAI / Gemini APIs
+- OpenAI API / Gemini API
 - FAISS
-- LangChain / LangGraph
-- Vector Databases
+- LangChain
+- LangGraph
+- Vector Database
 - Pytest
 - Logging
 - GitHub Actions
 
 ---
 
-## Learning Roadmap
+## 📂 Project Structure
 
-### Phase 1 – Python Fundamentals
-
-- [x] Project setup
-- [x] Read text files
-- [x] Exception handling
-- [x] Basic project structure
-- [ ] Pathlib
-- [ ] Logging
-- [ ] Unit testing
-
----
-
-### Phase 2 – Document Processing
-
-- [ ] Load multiple documents
-- [ ] Document parsing
-- [ ] Text cleaning
-- [ ] Chunking
-- [ ] Metadata extraction
-
----
-
-### Phase 3 – Search Engine
-
-- [ ] Keyword search
-- [ ] Ranking
-- [ ] Similarity search
-
----
-
-### Phase 4 – AI Integration
-
-- [ ] Embeddings
-- [ ] Vector database
-- [ ] Semantic search
-- [ ] RAG pipeline
-- [ ] LLM integration
-
----
-
-### Phase 5 – Production
-
-- [ ] FastAPI
-- [ ] Docker
-- [ ] Configuration management
-- [ ] Logging
-- [ ] Testing
-- [ ] Deployment
-
----
-
-## Project Structure
-
-```
-
+```text
 enterprise-knowledge-assistant/
 │
 ├── data/
@@ -117,59 +65,120 @@ enterprise-knowledge-assistant/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-
 ```
 
 ---
 
-## Current Features
+## 🚀 Current Features
 
-- Reads text documents
-- Displays document summary
-- Counts characters
-- Counts lines
-- Handles common file-related exceptions
+- Read text documents
+- Count total characters
+- Count total lines
+- Display document summary
+- Handle common file-related exceptions
 
 ---
 
-## Current Output
+## 📌 Sample Output
 
-```
-
+```text
 File loaded successfully
 
-Total Characters : XXX
-
-Total Lines : XX
-
-File Path : data/sample.txt
-
+Total Characters : 125
+Total Lines      : 5
+File Path        : data/sample.txt
 ```
 
 ---
 
-## Future Features
+# 🗺 Roadmap
 
-- Upload PDF documents
-- OCR support
-- Intelligent document chunking
-- Embedding generation
-- Vector similarity search
-- Question answering using LLMs
-- Multi-document search
-- REST API
-- Docker deployment
-- Cloud deployment
+## Phase 1 — Python Foundations
+
+- [x] Project setup
+- [x] File handling
+- [x] Exception handling
+- [x] Character count
+- [x] Line count
+- [ ] Pathlib
+- [ ] Logging
+- [ ] Unit testing
 
 ---
 
-## Engineering Principles
+## Phase 2 — Document Processing
 
-This project follows the following principles:
+- [ ] Read multiple documents
+- [ ] Document parsing
+- [ ] Text cleaning
+- [ ] Chunking
+- [ ] Metadata extraction
+
+---
+
+## Phase 3 — Search Engine
+
+- [ ] Keyword search
+- [ ] Ranking
+- [ ] Similarity search
+
+---
+
+## Phase 4 — AI Integration
+
+- [ ] Embeddings
+- [ ] Vector database
+- [ ] Semantic search
+- [ ] Retrieval-Augmented Generation (RAG)
+- [ ] LLM Integration
+
+---
+
+## Phase 5 — Production
+
+- [ ] FastAPI
+- [ ] Docker
+- [ ] Configuration management
+- [ ] Logging
+- [ ] Unit testing
+- [ ] CI/CD
+- [ ] Cloud deployment
+
+---
+
+# 📅 Progress Log
+
+## Day 1 (1 July 2026)
+
+### Completed
+
+- Project initialization
+- Repository setup
+- Text file reader
+- Exception handling
+- Document summary
+- Character counting
+- Line counting
+
+### Concepts Learned
+
+- File handling
+- `with` statement
+- `try-except`
+- `pathlib` (Introduction)
+- Functions
+- Type hints
+- Docstrings
+
+---
+
+# 🏗 Engineering Principles
+
+This project follows:
 
 - Clean Code
-- Single Responsibility Principle
 - Separation of Concerns
+- Single Responsibility Principle (SRP)
 - Modular Design
 - Readable Code
 - Production-first mindset
@@ -177,41 +186,48 @@ This project follows the following principles:
 
 ---
 
-## Progress Log
+# 📚 Learning Philosophy
 
-### Day 1
+This repository is intentionally built one feature at a time.
 
-**Completed**
+The objective is **not** to copy tutorial code, but to understand how production-grade AI applications are designed, developed, tested, and deployed.
 
-- Project initialization
-- Git repository setup
-- Read text files
-- Exception handling
-- Document summary
-- Character counting
-- Line counting
+Every feature is implemented only after understanding:
 
-**Concepts Learned**
-
-- File handling
-- `try-except`
-- `with` statement
-- `pathlib` (introduction)
-- Functions
-- Type hints
-- Docstrings
+- Why it is required
+- How it works
+- Where it fits in the overall architecture
+- Production best practices
 
 ---
 
-## Author
+# 👨‍💻 Author
 
 **Geetesh Singh**
 
-Data Engineer transitioning into AI Data Engineering by building production-grade projects from scratch.
+Data Engineer transitioning into AI Data Engineering through production-grade projects and continuous learning.
 
 ---
 
-## License
+# ⭐ Future Scope
 
-This project is created for learning, portfolio development, and demonstration purposes.
-```
+By the end of this project, the application will support:
+
+- PDF ingestion
+- OCR
+- Multiple document formats
+- Intelligent chunking
+- Embedding generation
+- Vector similarity search
+- AI-powered question answering
+- REST APIs
+- Docker deployment
+- Cloud deployment
+- Enterprise-ready architecture
+
+---
+
+## 📄 License
+
+This project is intended for educational purposes, portfolio development, and demonstration of AI Data Engineering concepts.
+````
