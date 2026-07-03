@@ -1,5 +1,3 @@
-from pathlib import Path
-
 # Open the file in read mode ('r')
 def split_into_paragraphs(text):
     paragraphs = text.split("\n\n")  # Spliting by double newlines
@@ -55,29 +53,78 @@ except Exception as e:
 
 # def load_document(file_path: Path) -> str:
 #     """
-#     Reads and returns the contents of a text file.
-#     Raises an exception if the file cannot be read.
+#     Reads the contents of a text file.
+
+#     Args:
+#         file_path: Path object representing the file location.
+
+#     Returns:
+#         File content as a string.
 #     """
 #     with file_path.open("r", encoding="utf-8") as file:
 #         return file.read()
 
 
+# def split_into_paragraphs(content: str) -> list[str]:
+#     """
+#     Splits document into paragraphs and removes empty entries.
+#     """
+#     return [paragraph.strip() for paragraph in content.split("\n\n") if paragraph.strip()]
+
+
+# def search_document(paragraphs: list[str], query: str) -> list[str]:
+#     """
+#     Searches for paragraphs containing the user's query.
+
+#     Returns:
+#         List of matching paragraphs.
+#     """
+#     matches = []
+
+#     for paragraph in paragraphs:
+#         if query.lower() in paragraph.lower():
+#             matches.append(paragraph)
+
+#     return matches
+
+
 # def print_summary(file_path: Path, content: str) -> None:
 #     """
-#     Prints a summary of the loaded document.
+#     Displays basic information about the document.
 #     """
-#     print("File loaded successfully")
-#     print(f"Total Characters : {len(content)}")
-#     print(f"Total Lines      : {len(content.splitlines())}")
-#     print(f"File Path        : {file_path.resolve()}")
+#     print("\nFile loaded successfully")
+#     print("-" * 40)
+#     print(f"Characters : {len(content)}")
+#     print(f"Lines      : {len(content.splitlines())}")
+#     print(f"Path       : {file_path.resolve()}")
+#     print("-" * 40)
 
 
 # def main() -> None:
+
 #     file_path = Path("data") / "sample.txt"
 
 #     try:
 #         content = load_document(file_path)
+
 #         print_summary(file_path, content)
+
+#         paragraphs = split_into_paragraphs(content)
+
+#         query = input("Enter your question: ").strip()
+
+#         results = search_document(paragraphs, query)
+
+#         print("\nSearch Results")
+#         print("-" * 40)
+
+#         if results:
+#             for result in results:
+#                 print(result)
+#                 print()
+
+#         else:
+#             print("No matching paragraph found.")
 
 #     except FileNotFoundError:
 #         print(f"ERROR: File not found -> {file_path}")
