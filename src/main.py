@@ -1,5 +1,11 @@
+from pathlib import Path
+
 # Open the file in read mode ('r')
-file_location = "data/sample.txt"
+def split_into_paragraphs(text):
+    paragraphs = text.split("\n\n")  # Spliting by double newlines
+    return [p.strip() for p in paragraphs if p.strip()]  # Removing empty paragraphs
+
+file_location = "data/sample.txt"  # Specifying the path to my text file
 
 try:
     with open(file_location, "r") as file:
@@ -10,8 +16,29 @@ try:
             line_count = len(content.splitlines())
             print(f"Total Lines: {line_count}")
             print(f"File Path: {file_location}")
+            print("-" * 40)
+            
+            # Converting the single large string into a list of paragraphs
+            paragraphs_list = split_into_paragraphs(content)
+            
+            # --- STEP 3: Ask the User ---
+            user_query = input("Enter your question: ")
+            print("-" * 40)
+            
+            # --- STEP 4: Searching Logic ---
+            found = False
+            for paragraph in paragraphs_list:
+                # Basic case-sensitive check for today
+                if user_query in paragraph:
+                    print(paragraph)
+                    print()  # Print a blank line for spacing
+                    found = True
+            
+            if not found:
+                print(f"No paragraphs found containing: '{user_query}'")
+                
         else:
-            print("File Not Loaded")
+            print("File Not Loaded (File is empty)")
 
 except FileNotFoundError:
     print(f"Error: The file at '{file_location}' could not be found.")

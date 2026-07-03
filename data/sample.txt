@@ -1,11 +1,9 @@
-OpenAI develops AI models.
+Kafka is a distributed event streaming platform used for building real-time data pipelines.
 
-Kafka is used for event streaming.
+Apache Spark is an analytics engine for large-scale data processing.
 
-Spark processes large-scale data.
+Python is widely used for data engineering, machine learning, and AI.
 
-Vector databases store embeddings.
+Databricks provides a unified platform for data engineering and machine learning.
 
-RAG combines retrieval with language models.
-
-Made by Geetesh
+Vector databases store embeddings for semantic search.
