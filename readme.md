@@ -169,6 +169,124 @@ File Path        : data/sample.txt
 - Type hints
 - Docstrings
 
+# 📅 Progress Log
+
+---
+
+## ✅ Day 2 — Keyword-Based Document Search
+
+### Objective
+
+Build a simple search engine capable of retrieving relevant paragraphs from a text document without using AI.
+
+### Features Implemented
+
+- Split document into paragraphs
+- Stored paragraphs in a Python list
+- Accepted user input using `input()`
+- Implemented keyword-based search
+- Returned matching paragraphs
+- Displayed user-friendly messages when no match was found
+
+### Python Concepts Learned
+
+- Functions
+- Lists
+- Loops
+- String methods
+- User Input
+- List Comprehension
+- Boolean Flags (`found = False`)
+
+### Software Engineering Concepts
+
+- Separation of Concerns
+- Function Design
+- Code Readability
+- Incremental Development
+
+### Challenges
+
+- Designing search logic
+- Working with lists of paragraphs
+- Handling missing search results
+
+### Commit
+
+```text
+feat: implement keyword-based document search
+```
+
+---
+
+## ✅ Day 3 — Query Preprocessing
+
+### Objective
+
+Improve the search engine by cleaning user queries before performing the search.
+
+### Features Implemented
+
+- Built `clean_query()` utility function
+- Converted queries to lowercase
+- Removed punctuation (`?`)
+- Removed stop words
+- Improved search accuracy
+- Created reusable text utility module
+
+### Python Concepts Learned
+
+- `strip()`
+- `lower()`
+- `replace()`
+- `split()`
+- `join()`
+- String Iteration
+- Type Hints
+- Return Statements
+
+### Software Engineering Concepts
+
+- Query Normalization
+- Stop Words
+- Edge Case Analysis
+- Utility Modules
+- Function Reusability
+- Debugging
+
+### Challenges
+
+- Understanding `return` inside vs outside loops
+- Debugging indentation issues
+- Testing multiple query formats
+- Improving algorithm design
+
+### Commit
+
+```text
+feat: add query preprocessing and text utility functions
+```
+
+---
+
+### Current Project Status
+
+- [x] Project Setup
+- [x] File Reader
+- [x] Exception Handling
+- [x] Document Summary
+- [x] Paragraph Splitting
+- [x] Keyword Search
+- [x] Query Preprocessing
+- [ ] Keyword Indexing
+- [ ] Ranking
+- [ ] Semantic Search
+- [ ] Embeddings
+- [ ] Vector Database
+- [ ] RAG Pipeline
+- [ ] FastAPI
+- [ ] Docker
+- [ ] Deployment
 ---
 
 # 🏗 Engineering Principles
