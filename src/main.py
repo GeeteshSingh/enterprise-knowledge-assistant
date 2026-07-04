@@ -4,7 +4,9 @@ def split_into_paragraphs(text):
     return [p.strip() for p in paragraphs if p.strip()]  # Removing empty paragraphs
 
 file_location = "data/sample.txt"  # Specifying the path to my text file
+words = ["Python", "is", "awesome"]
 
+print(" ".join(words))
 try:
     with open(file_location, "r") as file:
         content = file.read()
