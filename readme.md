@@ -1,45 +1,88 @@
 # Enterprise Knowledge Assistant
 
-> A production-oriented AI Data Engineering project that evolves from basic document processing into a Retrieval-Augmented Generation (RAG) application.
+> 🚀 A production-oriented AI Data Engineering project that evolves from basic document processing into a Retrieval-Augmented Generation (RAG) application using modern AI technologies.
+
+---
+
+## 📌 Project Status
+
+**Current Phase:** Phase 1 – Python Foundations
+
+**Progress:** Day 3 / 90
+
+### Current Capabilities
+
+- ✅ Read text documents
+- ✅ Display document summary
+- ✅ Split documents into paragraphs
+- ✅ Perform keyword-based search
+- ✅ Query preprocessing
+- ✅ Stop-word removal
+- ✅ Exception handling
 
 ---
 
 ## 📖 Overview
 
-Enterprise organizations store large amounts of information across documents, reports, SOPs, emails, and knowledge bases. Retrieving the right information quickly is often challenging.
+Enterprise organizations store vast amounts of information across documents such as PDFs, Word files, SOPs, emails, reports, and knowledge bases.
 
-This project demonstrates how to build an **AI-powered Enterprise Knowledge Assistant** capable of processing enterprise documents and answering user questions using modern AI technologies.
+This project demonstrates how to build an AI-powered Enterprise Knowledge Assistant capable of ingesting enterprise documents, retrieving relevant information, and eventually answering user questions using Retrieval-Augmented Generation (RAG).
 
-Unlike tutorial-based projects, this repository follows **production engineering practices**, with the application built incrementally from the ground up.
+Unlike tutorial-based projects, this repository is being developed incrementally using production engineering practices.
 
 ---
 
-## 🎯 Goals
+# 🏛 Current Architecture
 
-- Learn AI Data Engineering through hands-on development
-- Build production-quality Python applications
-- Implement Retrieval-Augmented Generation (RAG)
-- Work with embeddings and vector databases
+```text
+                User
+                  │
+                  ▼
+          Enter Search Query
+                  │
+                  ▼
+        Query Preprocessing
+                  │
+                  ▼
+      Keyword-Based Search
+                  │
+                  ▼
+      Matching Paragraph(s)
+                  │
+                  ▼
+             Response
+```
+
+---
+
+# 🎯 Goals
+
+- Learn AI Data Engineering by building real projects
+- Master Python from fundamentals to advanced
+- Build production-quality software
+- Learn Retrieval-Augmented Generation (RAG)
+- Work with Embeddings
+- Integrate Vector Databases
 - Build REST APIs using FastAPI
-- Containerize applications with Docker
+- Containerize applications using Docker
 - Deploy applications to the cloud
-- Follow software engineering best practices
 
 ---
 
-## 🛠 Tech Stack
+# 🛠 Tech Stack
 
-### Current
+## Current
 
 - Python 3.x
 - Git
 - GitHub
 
-### Planned
+## Planned
 
 - FastAPI
 - Docker
-- OpenAI API / Gemini API
+- OpenAI API
+- Gemini API
 - FAISS
 - LangChain
 - LangGraph
@@ -50,7 +93,7 @@ Unlike tutorial-based projects, this repository follows **production engineering
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
 enterprise-knowledge-assistant/
@@ -61,6 +104,9 @@ enterprise-knowledge-assistant/
 ├── src/
 │   └── main.py
 │
+├── utils/
+│   └── text_utils.py
+│
 ├── requirements.txt
 ├── README.md
 └── .gitignore
@@ -68,25 +114,30 @@ enterprise-knowledge-assistant/
 
 ---
 
-## 🚀 Current Features
+# 🚀 Features
 
-- Read text documents
-- Count total characters
-- Count total lines
-- Display document summary
-- Handle common file-related exceptions
+## Completed
 
----
+- Read text files
+- Character counting
+- Line counting
+- Document summary
+- Paragraph splitting
+- Keyword search
+- Query preprocessing
+- Stop-word removal
 
-## 📌 Sample Output
+## Planned
 
-```text
-File loaded successfully
-
-Total Characters : 125
-Total Lines      : 5
-File Path        : data/sample.txt
-```
+- Keyword indexing
+- Ranking engine
+- Semantic search
+- Embeddings
+- Vector database
+- RAG
+- FastAPI
+- Docker
+- Cloud deployment
 
 ---
 
@@ -99,7 +150,8 @@ File Path        : data/sample.txt
 - [x] Exception handling
 - [x] Character count
 - [x] Line count
-- [ ] Pathlib
+- [x] Functions
+- [x] Pathlib
 - [ ] Logging
 - [ ] Unit testing
 
@@ -107,8 +159,9 @@ File Path        : data/sample.txt
 
 ## Phase 2 — Document Processing
 
+- [x] Paragraph splitting
+- [x] Query preprocessing
 - [ ] Read multiple documents
-- [ ] Document parsing
 - [ ] Text cleaning
 - [ ] Chunking
 - [ ] Metadata extraction
@@ -117,7 +170,8 @@ File Path        : data/sample.txt
 
 ## Phase 3 — Search Engine
 
-- [ ] Keyword search
+- [x] Keyword search
+- [ ] Keyword indexing
 - [ ] Ranking
 - [ ] Similarity search
 
@@ -126,9 +180,9 @@ File Path        : data/sample.txt
 ## Phase 4 — AI Integration
 
 - [ ] Embeddings
-- [ ] Vector database
-- [ ] Semantic search
-- [ ] Retrieval-Augmented Generation (RAG)
+- [ ] Vector Database
+- [ ] Semantic Search
+- [ ] RAG
 - [ ] LLM Integration
 
 ---
@@ -137,184 +191,128 @@ File Path        : data/sample.txt
 
 - [ ] FastAPI
 - [ ] Docker
-- [ ] Configuration management
+- [ ] Configuration
 - [ ] Logging
-- [ ] Unit testing
+- [ ] Unit Testing
 - [ ] CI/CD
-- [ ] Cloud deployment
+- [ ] Cloud Deployment
 
 ---
 
-# 📅 Progress Log
+# 📅 Development Journal
 
-## Day 1 (1 July 2026)
+## ✅ Day 1 — File Reader
 
-### Completed
+### Features
 
 - Project initialization
-- Repository setup
-- Text file reader
+- File reader
 - Exception handling
-- Document summary
-- Character counting
-- Line counting
+- Character count
+- Line count
 
-### Concepts Learned
+### Python Concepts
 
-- File handling
-- `with` statement
-- `try-except`
-- `pathlib` (Introduction)
+- File Handling
 - Functions
-- Type hints
+- Type Hints
 - Docstrings
-
-# 📅 Progress Log
+- try-except
+- pathlib
 
 ---
 
-## ✅ Day 2 — Keyword-Based Document Search
+## ✅ Day 2 — Keyword Search
 
-### Objective
+### Features
 
-Build a simple search engine capable of retrieving relevant paragraphs from a text document without using AI.
+- Paragraph splitting
+- Keyword search
+- User input
+- Search results
 
-### Features Implemented
+### Python Concepts
 
-- Split document into paragraphs
-- Stored paragraphs in a Python list
-- Accepted user input using `input()`
-- Implemented keyword-based search
-- Returned matching paragraphs
-- Displayed user-friendly messages when no match was found
-
-### Python Concepts Learned
-
-- Functions
 - Lists
 - Loops
-- String methods
-- User Input
 - List Comprehension
-- Boolean Flags (`found = False`)
-
-### Software Engineering Concepts
-
-- Separation of Concerns
-- Function Design
-- Code Readability
-- Incremental Development
-
-### Challenges
-
-- Designing search logic
-- Working with lists of paragraphs
-- Handling missing search results
-
-### Commit
-
-```text
-feat: implement keyword-based document search
-```
+- Boolean Flags
 
 ---
 
 ## ✅ Day 3 — Query Preprocessing
 
-### Objective
+### Features
 
-Improve the search engine by cleaning user queries before performing the search.
+- clean_query()
+- Stop-word removal
+- Query normalization
+- Utility module
 
-### Features Implemented
+### Python Concepts
 
-- Built `clean_query()` utility function
-- Converted queries to lowercase
-- Removed punctuation (`?`)
-- Removed stop words
-- Improved search accuracy
-- Created reusable text utility module
+- split()
+- join()
+- lower()
+- strip()
+- replace()
+- String iteration
 
-### Python Concepts Learned
+### Biggest Lesson
 
-- `strip()`
-- `lower()`
-- `replace()`
-- `split()`
-- `join()`
-- String Iteration
-- Type Hints
-- Return Statements
+> The position of a `return` statement completely changes program flow.
 
-### Software Engineering Concepts
-
-- Query Normalization
-- Stop Words
-- Edge Case Analysis
-- Utility Modules
-- Function Reusability
-- Debugging
-
-### Challenges
-
-- Understanding `return` inside vs outside loops
-- Debugging indentation issues
-- Testing multiple query formats
-- Improving algorithm design
-
-### Commit
-
-```text
-feat: add query preprocessing and text utility functions
-```
-
----
-
-### Current Project Status
-
-- [x] Project Setup
-- [x] File Reader
-- [x] Exception Handling
-- [x] Document Summary
-- [x] Paragraph Splitting
-- [x] Keyword Search
-- [x] Query Preprocessing
-- [ ] Keyword Indexing
-- [ ] Ranking
-- [ ] Semantic Search
-- [ ] Embeddings
-- [ ] Vector Database
-- [ ] RAG Pipeline
-- [ ] FastAPI
-- [ ] Docker
-- [ ] Deployment
 ---
 
 # 🏗 Engineering Principles
 
-This project follows:
-
 - Clean Code
-- Separation of Concerns
 - Single Responsibility Principle (SRP)
+- Separation of Concerns
 - Modular Design
-- Readable Code
-- Production-first mindset
-- Incremental development
+- Incremental Development
+- Production-first Mindset
 
 ---
 
 # 📚 Learning Philosophy
 
-This repository is intentionally built one feature at a time.
-
-The objective is **not** to copy tutorial code, but to understand how production-grade AI applications are designed, developed, tested, and deployed.
+This project is intentionally built from scratch without relying on large tutorials.
 
 Every feature is implemented only after understanding:
 
-- Why it is required
+- Why it is needed
 - How it works
-- Where it fits in the overall architecture
+- Trade-offs
 - Production best practices
+
+---
+
+# 📈 Current Progress
+
+```text
+████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 3%
+```
+
+Current Milestone
+
+✅ Python Foundations
+
+⬜ Smarter Search
+
+⬜ Semantic Search
+
+⬜ Embeddings
+
+⬜ Vector Database
+
+⬜ RAG
+
+⬜ FastAPI
+
+⬜ Docker
+
+⬜ Deployment
 
 ---
 
@@ -322,29 +320,10 @@ Every feature is implemented only after understanding:
 
 **Geetesh Singh**
 
-Data Engineer transitioning into AI Data Engineering through production-grade projects and continuous learning.
+Data Engineer transitioning into AI Data Engineering by building production-grade projects from scratch.
 
 ---
 
-# ⭐ Future Scope
+# 📄 License
 
-By the end of this project, the application will support:
-
-- PDF ingestion
-- OCR
-- Multiple document formats
-- Intelligent chunking
-- Embedding generation
-- Vector similarity search
-- AI-powered question answering
-- REST APIs
-- Docker deployment
-- Cloud deployment
-- Enterprise-ready architecture
-
----
-
-## 📄 License
-
-This project is intended for educational purposes, portfolio development, and demonstration of AI Data Engineering concepts.
-
+This repository is intended for learning, portfolio development, and demonstration purposes.
