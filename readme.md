@@ -258,6 +258,47 @@ enterprise-knowledge-assistant/
 - replace()
 - String iteration
 
+## ✅ Day 4 — Building a Keyword Index
+
+### Objective
+
+Build the first version of a keyword index to improve document search performance.
+
+### Features
+
+- Refactored `clean_query()` to return a list of keywords
+- Used a `set` for efficient stop-word lookup
+- Built an inverted keyword index using a Python dictionary
+- Indexed keywords against paragraph numbers
+- Prevented duplicate paragraph entries for repeated keywords
+
+### Python Concepts
+
+- Dictionaries
+- Sets
+- `enumerate()`
+- Nested loops
+- Dictionary updates
+- `append()`
+
+### Software Engineering Concepts
+
+- Inverted Index
+- Data Modeling
+- Code Reusability
+- Separation of Concerns
+- Algorithm Design
+
+### Biggest Lesson
+
+An inverted index stores **keywords as keys** and **paragraph indices as values**, allowing fast lookups without scanning every paragraph.
+
+### Commit
+
+```text
+feat: build keyword index using dictionaries
+```
+
 ### Biggest Lesson
 
 > The position of a `return` statement completely changes program flow.
