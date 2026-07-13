@@ -6,70 +6,93 @@
 
 ## 📌 Project Status
 
-**Current Phase:** Phase 1 – Python Foundations
+**Current Phase:** Phase 3 — Search Engine Foundations
 
-**Progress:** Day 3 / 90
+**Progress:** Day 6 / 90
 
 ### Current Capabilities
 
 - ✅ Read text documents
-- ✅ Display document summary
+- ✅ Display document summaries
 - ✅ Split documents into paragraphs
-- ✅ Perform keyword-based search
-- ✅ Query preprocessing
-- ✅ Stop-word removal
-- ✅ Exception handling
+- ✅ Normalize and clean user queries
+- ✅ Remove common stop words
+- ✅ Build an inverted keyword index
+- ✅ Perform multi-keyword search
+- ✅ Remove duplicate search results
+- ✅ Retrieve matching paragraphs
+- ✅ Maintain predictable document order
+- ✅ Use modular and reusable search functions
+- ✅ Handle common file-related exceptions
 
 ---
 
 ## 📖 Overview
 
-Enterprise organizations store vast amounts of information across documents such as PDFs, Word files, SOPs, emails, reports, and knowledge bases.
+Enterprise organizations store large amounts of information across documents such as PDFs, Word files, standard operating procedures, emails, reports, and internal knowledge bases.
 
-This project demonstrates how to build an AI-powered Enterprise Knowledge Assistant capable of ingesting enterprise documents, retrieving relevant information, and eventually answering user questions using Retrieval-Augmented Generation (RAG).
+Finding relevant information across these sources can be slow and difficult. This project demonstrates how to build an AI-powered Enterprise Knowledge Assistant capable of ingesting enterprise documents, retrieving relevant information, and eventually answering user questions using Retrieval-Augmented Generation (RAG).
 
-Unlike tutorial-based projects, this repository is being developed incrementally using production engineering practices.
+Unlike tutorial-based projects, this application is being developed incrementally from the ground up. Each feature is implemented only after understanding the underlying Python concepts, software-engineering principles, design decisions, and trade-offs.
 
 ---
 
 # 🏛 Current Architecture
 
 ```text
-                User
-                  │
-                  ▼
-          Enter Search Query
-                  │
-                  ▼
-        Query Preprocessing
-                  │
-                  ▼
-      Keyword-Based Search
-                  │
-                  ▼
-      Matching Paragraph(s)
-                  │
-                  ▼
-             Response
+                  User
+                    │
+                    ▼
+        "What is Apache Kafka?"
+                    │
+                    ▼
+             clean_query()
+                    │
+                    ▼
+          ["apache", "kafka"]
+                    │
+                    ▼
+              build_index()
+                    │
+                    ▼
+     Keyword → Paragraph Indices
+                    │
+                    ▼
+         get_unique_indices()
+                    │
+                    ▼
+                 [0, 2]
+                    │
+                    ▼
+         retrieve_paragraphs()
+                    │
+                    ▼
+        Matching Paragraph Text
+                    │
+                    ▼
+                 Response
 ```
 
 ---
 
-# 🎯 Goals
+# 🎯 Project Goals
 
-- Learn AI Data Engineering by building real projects
-- Master Python from fundamentals to advanced
-- Build production-quality software
-- Learn Retrieval-Augmented Generation (RAG)
-- Work with Embeddings
-- Integrate Vector Databases
+- Learn AI Data Engineering through hands-on development
+- Strengthen Python fundamentals
+- Build production-oriented Python applications
+- Understand information retrieval and search systems
+- Implement Retrieval-Augmented Generation (RAG)
+- Work with embeddings and vector databases
+- Integrate Large Language Models
 - Build REST APIs using FastAPI
 - Containerize applications using Docker
+- Add automated testing and CI/CD
 - Deploy applications to the cloud
+- Follow software-engineering best practices
 
 ---
 
-# 🛠 Tech Stack
+# 🛠 Technology Stack
 
 ## Current
 
@@ -79,6 +102,8 @@ Unlike tutorial-based projects, this repository is being developed incrementally
 
 ## Planned
 
+- Pytest
+- Logging
 - FastAPI
 - Docker
 - OpenAI API
@@ -87,9 +112,8 @@ Unlike tutorial-based projects, this repository is being developed incrementally
 - LangChain
 - LangGraph
 - Vector Database
-- Pytest
-- Logging
 - GitHub Actions
+- Cloud Platform
 
 ---
 
@@ -118,40 +142,58 @@ enterprise-knowledge-assistant/
 
 ## Completed
 
-- Read text files
+- Text-file reading
 - Character counting
 - Line counting
-- Document summary
+- Document summaries
+- File-related exception handling
 - Paragraph splitting
-- Keyword search
-- Query preprocessing
+- Query normalization
 - Stop-word removal
+- Keyword extraction
+- Inverted keyword indexing
+- Safe dictionary lookup
+- Multi-keyword retrieval
+- Duplicate-result removal
+- Predictable result ordering
+- Index-based paragraph retrieval
+- Modular search functions
+- Type hints
 
 ## Planned
 
-- Keyword indexing
-- Ranking engine
-- Semantic search
-- Embeddings
-- Vector database
-- RAG
-- FastAPI
-- Docker
-- Cloud deployment
+- Connect the complete search pipeline to document files
+- Read and process multiple documents
+- Improve punctuation handling
+- Add AND-based search
+- Add relevance scoring
+- Add result ranking
+- Add semantic search
+- Generate embeddings
+- Integrate a vector database
+- Build a RAG pipeline
+- Integrate an LLM
+- Build REST APIs using FastAPI
+- Add automated testing
+- Add application logging
+- Containerize using Docker
+- Add CI/CD
+- Deploy to the cloud
 
 ---
 
-# 🗺 Roadmap
+# 🗺 Project Roadmap
 
 ## Phase 1 — Python Foundations
 
 - [x] Project setup
 - [x] File handling
 - [x] Exception handling
-- [x] Character count
-- [x] Line count
+- [x] Character counting
+- [x] Line counting
 - [x] Functions
-- [x] Pathlib
+- [x] Type hints
+- [x] Introduction to `pathlib`
 - [ ] Logging
 - [ ] Unit testing
 
@@ -161,142 +203,255 @@ enterprise-knowledge-assistant/
 
 - [x] Paragraph splitting
 - [x] Query preprocessing
+- [x] Basic text cleaning
+- [x] Stop-word removal
+- [ ] Connect the search pipeline to document files
 - [ ] Read multiple documents
-- [ ] Text cleaning
-- [ ] Chunking
+- [ ] Improve text normalization
+- [ ] Document chunking
 - [ ] Metadata extraction
 
 ---
 
 ## Phase 3 — Search Engine
 
-- [x] Keyword Indexing
+- [x] Basic keyword search
+- [x] Inverted keyword indexing
+- [x] Safe index lookup
 - [x] Multi-keyword retrieval
 - [x] Duplicate-result handling
+- [x] Predictable result ordering
+- [x] Paragraph retrieval
+- [x] Modular search pipeline
 - [ ] AND-based search
-- [ ] Ranking
+- [ ] Match scoring
+- [ ] Result ranking
+- [ ] Search relevance improvements
 
 ---
 
 ## Phase 4 — AI Integration
 
 - [ ] Embeddings
-- [ ] Vector Database
-- [ ] Semantic Search
-- [ ] RAG
-- [ ] LLM Integration
+- [ ] Vector database
+- [ ] Semantic search
+- [ ] Retrieval-Augmented Generation
+- [ ] LLM integration
+- [ ] Source-aware answers
 
 ---
 
-## Phase 5 — Production
+## Phase 5 — Production Engineering
 
 - [ ] FastAPI
-- [ ] Docker
-- [ ] Configuration
+- [ ] Configuration management
 - [ ] Logging
-- [ ] Unit Testing
+- [ ] Unit testing
+- [ ] Docker
 - [ ] CI/CD
-- [ ] Cloud Deployment
+- [ ] Cloud deployment
+- [ ] Monitoring
 
 ---
 
 # 📅 Development Journal
 
-## ✅ Day 1 — File Reader
+## ✅ Day 1 — Text File Reader
 
-### Features
+### Objective
 
-- Project initialization
-- File reader
-- Exception handling
-- Character count
-- Line count
+Build a safe text-file reader and display basic document information.
 
-### Python Concepts
+### Features Implemented
 
-- File Handling
+- Initialized the project repository
+- Added a sample text document
+- Read text content from a file
+- Counted total characters
+- Counted total lines
+- Displayed the file path
+- Added exception handling
+
+### Python Concepts Learned
+
+- File handling
+- `with` statement
+- `try-except`
 - Functions
-- Type Hints
+- Type hints
 - Docstrings
-- try-except
-- pathlib
+- Introduction to `pathlib`
+
+### Key Learning
+
+A file should be opened safely and closed automatically using the `with` statement.
+
+### Commit
+
+```text
+feat: add text file reader and document summary
+```
 
 ---
 
-## ✅ Day 2 — Keyword Search
+## ✅ Day 2 — Keyword-Based Document Search
 
-### Features
+### Objective
 
-- Paragraph splitting
-- Keyword search
-- User input
-- Search results
+Build a basic search system capable of finding relevant paragraphs without using AI.
 
-### Python Concepts
+### Features Implemented
+
+- Split document content into paragraphs
+- Stored paragraphs in a Python list
+- Accepted user queries using `input()`
+- Searched paragraphs using keywords
+- Returned matching paragraphs
+- Displayed a message when no results were found
+
+### Python Concepts Learned
 
 - Lists
 - Loops
-- List Comprehension
-- Boolean Flags
+- Functions
+- String methods
+- User input
+- List comprehensions
+- Boolean flags
+
+### Key Learning
+
+Large document strings can be divided into smaller paragraphs to make retrieval easier.
+
+### Commit
+
+```text
+feat: implement keyword-based document search
+```
 
 ---
 
 ## ✅ Day 3 — Query Preprocessing
 
-### Features
+### Objective
 
-- clean_query()
-- Stop-word removal
-- Query normalization
-- Utility module
+Improve search behavior by cleaning and normalizing user queries.
 
-### Python Concepts
+### Features Implemented
 
-- split()
-- join()
-- lower()
-- strip()
-- replace()
+- Created `clean_query()`
+- Converted queries to lowercase
+- Removed selected punctuation
+- Split queries into words
+- Removed common stop words
+- Created a reusable text utility module
+
+### Python Concepts Learned
+
+- `strip()`
+- `lower()`
+- `replace()`
+- `split()`
+- `join()`
 - String iteration
+- List comprehensions
+- Sets
+- Return statements
 
-## ✅ Day 4 — Building a Keyword Index
+### Key Learning
+
+The position of a `return` statement changes program flow. A `return` placed inside a loop may end the function during the first iteration.
+
+### Commit
+
+```text
+feat: add query preprocessing and text utility functions
+```
+
+---
+
+## ✅ Day 4 — Building an Inverted Keyword Index
 
 ### Objective
 
-Build the first version of a keyword index to improve document search performance.
+Build an inverted keyword index to avoid scanning every paragraph for every search query.
 
-### Features
+### Features Implemented
 
-- Refactored `clean_query()` to return a list of keywords
-- Used a `set` for efficient stop-word lookup
-- Built an inverted keyword index using a Python dictionary
-- Indexed keywords against paragraph numbers
-- Prevented duplicate paragraph entries for repeated keywords
+- Updated `clean_query()` to return a list of keywords
+- Used a set for efficient stop-word lookup
+- Built an inverted index using a Python dictionary
+- Stored keywords as dictionary keys
+- Stored paragraph indices as dictionary values
+- Prevented duplicate paragraph indices for repeated words
 
-### Python Concepts
+### Example
+
+```python
+{
+    "apache": [0, 2],
+    "kafka": [0, 2],
+    "spark": [1, 2]
+}
+```
+
+### Python Concepts Learned
 
 - Dictionaries
 - Sets
 - `enumerate()`
 - Nested loops
 - Dictionary updates
-- `append()`
+- List `append()`
+- List indexing
+
+### Software-Engineering Concepts
+
+- Inverted indexing
+- Data modelling
+- Algorithm design
+- Code reusability
+
+### Key Learning
+
+An inverted index stores:
+
+```text
+Keyword
+    ↓
+Matching Paragraph Indices
+```
+
+Example:
+
+```text
+kafka → [0, 2]
+```
+
+This allows the application to locate relevant paragraphs directly instead of scanning the entire document for every query.
+
+### Commit
+
+```text
+feat: build keyword index using dictionaries
+```
+
+---
 
 ## ✅ Day 5 — Multi-Keyword Search and Document Retrieval
 
 ### Objective
 
-Use the inverted keyword index to retrieve relevant paragraphs efficiently without scanning the complete document for every search query.
+Use the inverted keyword index to retrieve relevant paragraphs for multiple query keywords.
 
 ### Features Implemented
 
 - Added multi-keyword index lookup
 - Used `dict.get()` for safe dictionary access
 - Retrieved paragraph indices for every query keyword
-- Used a `set` to remove duplicate paragraph indices
+- Used a set to remove duplicate paragraph indices
 - Used `sorted()` to maintain predictable document order
-- Retrieved the original paragraph content using matching indices
-- Returned relevant paragraphs for the user query
+- Retrieved original paragraph content using matching indices
 
 ### Search Flow
 
@@ -311,9 +466,6 @@ clean_query()
     │
     ▼
 ["apache", "kafka"]
-    │
-    ▼
-Keyword Index Lookup
     │
     ├── apache → [0, 2]
     │
@@ -348,9 +500,9 @@ Relevant Search Results
 - List `append()`
 - `sorted()`
 - Function return values
-- Type transformations
+- Data-type transformations
 
-### Software Engineering Concepts
+### Software-Engineering Concepts
 
 - Safe dictionary lookup
 - Defensive programming
@@ -358,13 +510,10 @@ Relevant Search Results
 - Duplicate-result handling
 - Deterministic result ordering
 - Index-based document retrieval
-- Separation of data retrieval from output display
 
 ### Key Learning
 
-The keyword index allows the application to retrieve matching paragraph locations directly instead of scanning every paragraph for every query.
-
-A `set` removes duplicate paragraph indices when multiple keywords match the same paragraph. The results are then sorted to preserve predictable document order.
+When multiple keywords point to the same paragraph, a set can remove duplicate paragraph indices.
 
 Example:
 
@@ -373,34 +522,28 @@ apache → [0, 2]
 
 kafka → [0, 2]
 
-Combined matches → {0, 2}
+Combined set → {0, 2}
 
 Sorted result → [0, 2]
 ```
 
-### Current Limitation
+### Current Search Behavior
 
-The current search uses **OR-based retrieval**.
+The current implementation uses **OR-based retrieval**.
 
-For the query:
+For:
 
 ```text
 Apache Kafka
 ```
 
-a paragraph is returned if it contains:
+a paragraph is returned when it contains:
 
 ```text
 Apache OR Kafka
 ```
 
-Future improvements will include:
-
-- AND-based search
-- Result ranking
-- Match scoring
-- Better punctuation handling
-- Search-result relevance
+Future improvements will include AND-based retrieval, relevance scoring, and result ranking.
 
 ### Commit
 
@@ -410,79 +553,256 @@ feat: implement multi-keyword document retrieval
 
 ---
 
-### Software Engineering Concepts
+## ✅ Day 6 — Refactoring the Keyword Search Pipeline
 
-- Inverted Index
-- Data Modeling
-- Code Reusability
+### Objective
+
+Refactor the existing keyword-search logic into small, reusable functions with clear responsibilities.
+
+The goal was to improve readability, maintainability, reusability, and testability without changing the existing search behavior.
+
+### Improvements Implemented
+
+- Moved keyword-index creation into `build_index()`
+- Added `get_unique_indices()` for multi-keyword index lookup
+- Used a set to remove duplicate paragraph indices
+- Used `sorted()` to maintain predictable document order
+- Added `retrieve_paragraphs()` to retrieve original paragraph text
+- Removed the outdated single-keyword search implementation
+- Removed duplicate imports and unnecessary function calls
+- Connected the cleaned user query directly to the search pipeline
+- Added type hints to search functions
+- Improved variable names and code readability
+
+### Current Search Pipeline
+
+```text
+User Query
+    │
+    ▼
+"What is Apache Kafka?"
+    │
+    ▼
+clean_query()
+    │
+    ▼
+["apache", "kafka"]
+    │
+    ▼
+build_index()
+    │
+    ▼
+{
+    "apache": [0, 2],
+    "kafka": [0, 2],
+    "spark": [1, 2]
+}
+    │
+    ▼
+get_unique_indices()
+    │
+    ▼
+[0, 2]
+    │
+    ▼
+retrieve_paragraphs()
+    │
+    ▼
+Matching Paragraphs
+```
+
+### Functions Created
+
+#### `clean_query()`
+
+Normalizes text, removes selected punctuation and stop words, and returns meaningful keywords.
+
+```python
+def clean_query(
+    query: str
+) -> list[str]:
+```
+
+Example:
+
+```text
+Input:
+"What is Apache Kafka?"
+
+Output:
+["apache", "kafka"]
+```
+
+#### `build_index()`
+
+Processes all paragraphs and creates an inverted keyword index.
+
+```python
+def build_index(
+    paragraphs: list[str]
+) -> dict[str, list[int]]:
+```
+
+Example:
+
+```python
+{
+    "apache": [0, 2],
+    "kafka": [0, 2],
+    "spark": [1, 2]
+}
+```
+
+#### `get_unique_indices()`
+
+Looks up all query keywords and returns unique matching paragraph indices in sorted order.
+
+```python
+def get_unique_indices(
+    keywords: list[str],
+    index: dict[str, list[int]]
+) -> list[int]:
+```
+
+Example:
+
+```text
+Input:
+["apache", "kafka"]
+
+Output:
+[0, 2]
+```
+
+#### `retrieve_paragraphs()`
+
+Uses matching paragraph indices to retrieve the original paragraph text.
+
+```python
+def retrieve_paragraphs(
+    paragraph_indices: list[int],
+    paragraphs: list[str]
+) -> list[str]:
+```
+
+Example output:
+
+```text
+Apache Kafka is an event streaming platform.
+
+Apache Kafka integrates with Spark.
+```
+
+### Python Concepts Learned
+
+- Function decomposition
+- Function parameters
+- Function return values
+- Type hints
+- Dictionaries
+- Sets
+- Nested loops
+- `enumerate()`
+- `dict.get()`
+- `set.add()`
+- `sorted()`
+- List indexing
+- List `append()`
+
+### Software-Engineering Concepts
+
 - Separation of Concerns
-- Algorithm Design
+- Single Responsibility Principle
+- Modular design
+- Code reusability
+- Readability
+- Maintainability
+- Refactoring without changing behavior
 
-### Biggest Lesson
+### Key Learning
 
-An inverted index stores **keywords as keys** and **paragraph indices as values**, allowing fast lookups without scanning every paragraph.
+A working application should not remain one large block of code.
+
+Each function should have one clear responsibility:
+
+```text
+clean_query()
+    → Clean and normalize text
+
+build_index()
+    → Build the inverted keyword index
+
+get_unique_indices()
+    → Find unique matching paragraph locations
+
+retrieve_paragraphs()
+    → Retrieve original paragraph content
+```
+
+Breaking the search pipeline into smaller functions makes the code easier to understand, test, debug, reuse, and extend.
 
 ### Commit
 
 ```text
-feat: build keyword index using dictionaries
+refactor: modularize keyword search pipeline
 ```
-
-### Biggest Lesson
-
-> The position of a `return` statement completely changes program flow.
 
 ---
 
 # 🏗 Engineering Principles
 
+This project follows:
+
 - Clean Code
-- Single Responsibility Principle (SRP)
+- Single Responsibility Principle
 - Separation of Concerns
 - Modular Design
+- Reusable Functions
+- Type Safety
+- Defensive Programming
 - Incremental Development
-- Production-first Mindset
+- Production-Oriented Engineering
 
 ---
 
 # 📚 Learning Philosophy
 
-This project is intentionally built from scratch without relying on large tutorials.
+This project is intentionally being built one feature at a time instead of copying a complete tutorial application.
 
 Every feature is implemented only after understanding:
 
-- Why it is needed
-- How it works
-- Trade-offs
-- Production best practices
+- Why it is required
+- What problem it solves
+- How the data moves through the application
+- How the implementation works
+- What trade-offs are involved
+- How it fits into the overall architecture
+- How the design can be improved for production use
 
 ---
 
 # 📈 Current Progress
 
 ```text
-████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 3%
+███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 7%
 ```
 
-Current Milestone
+## Current Milestones
 
-✅ Python Foundations
-
-⬜ Smarter Search
-
-⬜ Semantic Search
-
-⬜ Embeddings
-
-⬜ Vector Database
-
-⬜ RAG
-
-⬜ FastAPI
-
-⬜ Docker
-
-⬜ Deployment
+- ✅ Python foundations
+- ✅ Basic document processing
+- ✅ Indexed keyword search
+- ✅ Multi-keyword retrieval
+- ✅ Modular search pipeline
+- ⬜ File-connected search pipeline
+- ⬜ Smarter search and ranking
+- ⬜ Semantic search
+- ⬜ Embeddings
+- ⬜ Vector database
+- ⬜ RAG
+- ⬜ FastAPI
+- ⬜ Docker
+- ⬜ Cloud deployment
 
 ---
 
@@ -490,7 +810,7 @@ Current Milestone
 
 **Geetesh Singh**
 
-Data Engineer transitioning into AI Data Engineering by building production-grade projects from scratch.
+Data Engineer transitioning into AI Data Engineering by building production-oriented projects from the ground up.
 
 ---
 

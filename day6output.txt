@@ -1,0 +1,20 @@
+['apache', 'kafka']
+--- Dynamic Keyword Index Completed ---
+{'apache': [0, 2],
+ 'big': [1],
+ 'data': [1],
+ 'event': [0],
+ 'integrates': [2],
+ 'kafka': [0, 2],
+ 'platform': [0],
+ 'processes': [1],
+ 'spark': [1, 2],
+ 'streaming': [0],
+ 'with': [2]}
+--- Unique Matching Paragraph Indices ---
+[0, 2]
+--- Search Results ---
+Apache Kafka is an event streaming platform.
+
+Apache Kafka integrates with Spark.
+
