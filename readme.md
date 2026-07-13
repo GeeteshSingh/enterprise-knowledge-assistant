@@ -170,10 +170,11 @@ enterprise-knowledge-assistant/
 
 ## Phase 3 — Search Engine
 
-- [x] Keyword search
-- [ ] Keyword indexing
+- [x] Keyword Indexing
+- [x] Multi-keyword retrieval
+- [x] Duplicate-result handling
+- [ ] AND-based search
 - [ ] Ranking
-- [ ] Similarity search
 
 ---
 
@@ -280,6 +281,134 @@ Build the first version of a keyword index to improve document search performanc
 - Nested loops
 - Dictionary updates
 - `append()`
+
+## ✅ Day 5 — Multi-Keyword Search and Document Retrieval
+
+### Objective
+
+Use the inverted keyword index to retrieve relevant paragraphs efficiently without scanning the complete document for every search query.
+
+### Features Implemented
+
+- Added multi-keyword index lookup
+- Used `dict.get()` for safe dictionary access
+- Retrieved paragraph indices for every query keyword
+- Used a `set` to remove duplicate paragraph indices
+- Used `sorted()` to maintain predictable document order
+- Retrieved the original paragraph content using matching indices
+- Returned relevant paragraphs for the user query
+
+### Search Flow
+
+```text
+User Query
+    │
+    ▼
+"What is Apache Kafka?"
+    │
+    ▼
+clean_query()
+    │
+    ▼
+["apache", "kafka"]
+    │
+    ▼
+Keyword Index Lookup
+    │
+    ├── apache → [0, 2]
+    │
+    └── kafka  → [0, 2]
+    │
+    ▼
+Combine Matching Indices
+    │
+    ▼
+{0, 2}
+    │
+    ▼
+Remove Duplicates and Sort
+    │
+    ▼
+[0, 2]
+    │
+    ▼
+Retrieve Original Paragraphs
+    │
+    ▼
+Relevant Search Results
+```
+
+### Python Concepts Learned
+
+- `dict.get()`
+- Sets
+- `set.add()`
+- Nested loops
+- List indexing
+- List `append()`
+- `sorted()`
+- Function return values
+- Type transformations
+
+### Software Engineering Concepts
+
+- Safe dictionary lookup
+- Defensive programming
+- Multi-keyword retrieval
+- Duplicate-result handling
+- Deterministic result ordering
+- Index-based document retrieval
+- Separation of data retrieval from output display
+
+### Key Learning
+
+The keyword index allows the application to retrieve matching paragraph locations directly instead of scanning every paragraph for every query.
+
+A `set` removes duplicate paragraph indices when multiple keywords match the same paragraph. The results are then sorted to preserve predictable document order.
+
+Example:
+
+```text
+apache → [0, 2]
+
+kafka → [0, 2]
+
+Combined matches → {0, 2}
+
+Sorted result → [0, 2]
+```
+
+### Current Limitation
+
+The current search uses **OR-based retrieval**.
+
+For the query:
+
+```text
+Apache Kafka
+```
+
+a paragraph is returned if it contains:
+
+```text
+Apache OR Kafka
+```
+
+Future improvements will include:
+
+- AND-based search
+- Result ranking
+- Match scoring
+- Better punctuation handling
+- Search-result relevance
+
+### Commit
+
+```text
+feat: implement multi-keyword document retrieval
+```
+
+---
 
 ### Software Engineering Concepts
 

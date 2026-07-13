@@ -1,3 +1,4 @@
+import pprint
 def clean_query(query: str) -> list[str]:
    normalized = query.strip().lower().replace("?", "").replace(".", "").replace(",", "")
    words = normalized.split()
@@ -30,9 +31,42 @@ for paragraph_index, text in enumerate(paragraphs):
 
 print("--- Dynamic Keyword Index Completed ---")
 print(index)
-# import pprint
-# pprint.pprint(index)
+import pprint
+pprint.pprint(index)
 
+
+def search_document(keywords, index, paragraphs):
+    results = []
+    paragraph_numbers = index.get(keywords[0], [])
+
+    for num in paragraph_numbers:
+        results.append(paragraphs[num])
+    return results
+
+def get_unique_indices(keywords: list[str], index: dict[str, list[int]]) -> list[int]:
+    matched_indices = set()
+    
+    for keyword in keywords:
+        paragraph_indices = index.get(keyword, [])
+        
+        for num in paragraph_indices:
+            matched_indices.add(num)
+            
+    return sorted(matched_indices)
+
+keywords = ["apache", "kafka"]
+
+matched_indices = get_unique_indices(keywords, index)
+
+print("--- Unique Matching Paragraph Indices ---")
+print(matched_indices)
+
+results = []
+for paragraph_index in matched_indices:
+    results.append(paragraphs[paragraph_index])
+
+print("\n--- Final Retrieved Paragraphs ---")
+print(results)
 # def clean_query(query: str) -> str:
 #     query = query.strip().lower().replace("?", "")
 #     words = query.split()
