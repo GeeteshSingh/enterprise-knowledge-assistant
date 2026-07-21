@@ -1,0 +1,15 @@
+Apache Spark is an open-source unified analytics engine designed for large-scale data processing.
+
+Spark provides in-memory computation, which makes it significantly faster than traditional disk-based processing systems like Hadoop MapReduce.
+
+Spark supports multiple programming languages including Python, Scala, Java, and R.
+
+Spark DataFrames provide a distributed collection of data organized into named columns, similar to a table in a relational database.
+
+Spark Streaming allows Spark to process live data streams in micro-batches, making it suitable for real-time analytics.
+
+Spark MLlib is a machine learning library built on top of Spark that provides algorithms for classification, regression, and clustering.
+
+Spark integrates with data sources such as HDFS, Amazon S3, Apache Kafka, Apache Hive, and many relational databases.
+
+PySpark is the Python API for Apache Spark. It allows data engineers and data scientists to interact with Spark using Python.
