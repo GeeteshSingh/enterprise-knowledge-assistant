@@ -1,0 +1,26 @@
+services:
+  api:
+    build: .
+    container_name: enterprise-knowledge-assistant
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount data directory so documents can be updated without rebuilding
+      - ./data:/app/data:ro
+      # Persist logs outside the container
+      - ./logs:/app/logs
+      # Persist FAISS index outside the container
+      - ./index:/app/index
+    environment:
+      # Set your API key here or in a .env file
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - DATA_DIR=data
+      - TOP_K=5
+      - LOG_LEVEL=INFO
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s

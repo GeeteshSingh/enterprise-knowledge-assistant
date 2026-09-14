@@ -1,0 +1,17 @@
+Python is a high-level, interpreted programming language known for its simplicity and readability.
+
+Python is widely used for data engineering, machine learning, artificial intelligence, and web development.
+
+Python libraries such as NumPy and Pandas provide powerful tools for numerical computation and data manipulation.
+
+Scikit-learn is a Python library for machine learning that provides simple and efficient tools for classification, regression, and clustering.
+
+Python virtual environments allow developers to create isolated environments for different projects, keeping dependencies separate.
+
+FastAPI is a modern Python web framework for building REST APIs. It is based on Python type hints and generates automatic API documentation.
+
+Python supports object-oriented programming through classes, inheritance, and encapsulation.
+
+Vector databases such as FAISS, Pinecone, and Chroma store high-dimensional vector embeddings for semantic search in Python applications.
+
+Retrieval-Augmented Generation (RAG) is a technique that combines information retrieval with language model generation to produce accurate, source-aware answers.

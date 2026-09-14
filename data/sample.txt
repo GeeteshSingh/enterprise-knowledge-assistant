@@ -1,9 +1,13 @@
-Kafka is a distributed event streaming platform used for building real-time data pipelines.
+Apache Kafka is a distributed event streaming platform used for building real-time data pipelines and streaming applications.
 
-Apache Spark is an analytics engine for large-scale data processing.
+Kafka stores data as a sequence of records called events. Each event has a key, value, and timestamp.
 
-Python is widely used for data engineering, machine learning, and AI.
+Kafka topics are categories to which records are published. Topics are split into partitions for scalability.
 
-Databricks provides a unified platform for data engineering and machine learning.
+Kafka consumers read data from topics. Multiple consumers can form a consumer group to share the workload.
 
-Vector databases store embeddings for semantic search.
+Kafka producers write data to topics. Producers can choose which partition to write to using a key.
+
+Kafka brokers are servers that store and serve topic data. A Kafka cluster consists of multiple brokers for fault tolerance.
+
+Apache Kafka integrates with Apache Spark for real-time stream processing and with Apache Flink for stateful computations.
